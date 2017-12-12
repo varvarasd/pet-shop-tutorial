@@ -25,26 +25,28 @@ App = {
 
   initWeb3: function() {
 	// is there an injected web3 instance?
-	if(typeof web3 !== 'undefined'){
-		App.web3Provider = web3.currentProvider;
-	} else {
-		// if no injected web3 instance is detected, fallback to the TestRPC
-		App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
-	}
-	web3 = new Web3(App.web3Provider);
+if (typeof web3 !== 'undefined') {
+	App.web3Provider = web3.currentProvider;
+  } else {
+	// If no injected web3 instance is detected, fallback to the TestRPC
+	App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+  }
+  web3 = new Web3(App.web3Provider);
     return App.initContract();
   },
 
   initContract: function() {
-    $.getJSON('Adoption.json', function(data){
+    $.getJSON('Adoption.json', function(data) {
 		// Get the necessary contract artifact file and instantiate it with truffle-contract
 		var AdoptionArtifact = data;
 		App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+	  
 		// Set the provider for our contract
-		App.contracts.Adoption.SetProvider(App.web3Provider);
-		// use our contract to retrieve and mark the adopted pets
+		App.contracts.Adoption.setProvider(App.web3Provider);
+	  
+		// Use our contract to retrieve and mark the adopted pets
 		return App.markAdopted();
-	})
+	  });
     return App.bindEvents();
   },
 
@@ -54,18 +56,19 @@ App = {
 
   markAdopted: function(adopters, account) {
 	var adoptionInstance;
+	
 	App.contracts.Adoption.deployed().then(function(instance) {
-		adoptionInstance = instance;
-
-		return adoptionInstance.getAdopters.call();
-	}).then(function(adopters){
-		for(i =0;i < adopters.legth; i++){
-			if(adopters[i] !== '0x0000000000000000000000000000000000000000'){
-				$('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
-			}
+	  adoptionInstance = instance;
+	
+	  return adoptionInstance.getAdopters.call();
+	}).then(function(adopters) {
+	  for (i = 0; i < adopters.length; i++) {
+		if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
+		  $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
 		}
-	}).catch(function(err){
-		console.log(err.message);
+	  }
+	}).catch(function(err) {
+	  console.log(err.message);
 	});
   },
 
