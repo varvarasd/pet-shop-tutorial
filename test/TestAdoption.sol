@@ -34,5 +34,5 @@ contract TestAdoption {
 
         Assert.equal(adopters[8], expected, "Owner of pet ID 8 should be recorded.");
     }
-
+    // run 'test' in truffle develop to run the tests
 }
