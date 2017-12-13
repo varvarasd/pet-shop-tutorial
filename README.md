@@ -34,7 +34,7 @@ Once you have them installed see below
 
 
 Congratulations! You're all done.
-From here onward you can check the commits and follow along or just go to the top of this page and click on the link where you'll have everything explained in more depth.
+From here onward you can check the commits and follow along or just go to the top of this file and click on the link where you'll have everything explained in more depth.
 
 **NOTE**: if you wish to run this app after cloning it you'll need to have the **Requirements** installed on your machine.
 
