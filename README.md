@@ -1,8 +1,8 @@
-This is a **Truffle**, **Ethereum** and **Solidity** pet-shop tutorial from [#Truffleframwork.com](http://truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin)
+This is a **Truffle**, **Ethereum** and **Solidity** pet-shop tutorial from [truffleframwork.com](http://truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin)
 
-##Requirements
+**Requirements**
 
-#To run this project you will need
+**To run this project you will need**
 
 1. Node.js v6+
 You can download it from [Node.js](https://nodejs.org/en/)
@@ -17,7 +17,7 @@ Once you have them installed see below
 
 ```npm install -g truffle```
 
-##Setting up
+**Setting up**
 
 1. Create the directory of the project and navigate into it:
 
@@ -34,8 +34,8 @@ Once you have them installed see below
 
 
 Congratulations! You're all done.
-From here onward you can check the commits and follow along or just go to the [top](#truffleframework.com) of this page and click on the link where you'll have everything neatly explained.
+From here onward you can check the commits and follow along or just go to the top of this page and click on the link where you'll have everything explained in more depth.
 
 **NOTE**: if you wish to run this app after cloning it you'll need to have the **Requirements** installed on your machine.
 
-Happy coding!
+**Happy coding!**
